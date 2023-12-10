@@ -1,5 +1,7 @@
 package Exercise03;
 
+import java.util.ArrayList;
+
 public class Inventory {
 
     private Vehicle[] vehicles;
@@ -31,7 +33,14 @@ public class Inventory {
         return avgPrice;
     }
 
-//    public Vehicle[] searchByMakeAndModel(String make, String model){
-//
-//    }
+    public Vehicle[] searchByMakeAndModel(String make, String model){
+
+        ArrayList<Vehicle> matchVehicles = new ArrayList<>();
+        for(Vehicle vehicle : vehicles){
+            if(vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)){
+                matchVehicles.add(vehicle);
+            }
+        }
+        return matchVehicles.toArray(new Vehicle[0]);
+    }
 }
