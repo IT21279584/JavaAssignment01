@@ -31,6 +31,10 @@ public class TrainSimulate {
             for(int i = startIndex; i <= endIndex; i++){
                 System.out.println(stations.get(i));
             }
+        }else if(startIndex != -1 && endIndex != -1 && endIndex <= startIndex){
+            for(int i = startIndex; i >= endIndex; i--){
+                System.out.println(stations.get(i));
+            }
         }else{
             System.out.println("Invalid Station. Please enter the valid station");
         }

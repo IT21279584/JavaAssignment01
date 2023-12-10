@@ -56,22 +56,31 @@ public class BankAccount {
     }
 
     public void deposit(float amount){
-        if(amount > 0){
-            balance += amount;
-            recordTransactions("Deposit", amount);
-            System.out.println("Deposit Successful. New Balance is : " + balance);
-        }else{
-            System.out.println("Invalid Data");
+        try{
+            if(amount > 0){
+                balance += amount;
+                recordTransactions("Deposit", amount);
+                System.out.println("Deposit Successful. New Balance is : " + balance);
+            }else{
+                throw new Exception("Invalid Data");
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
     public void withdraw(float amount){
-        if(balance > 0 && amount <= balance){
-            balance -= amount;
-            recordTransactions("Withdraw", amount);
-            System.out.println("Withdraw Successful. New Balance is : " + balance);
-        }else{
-            System.out.println("Invalid withdraw amount or Insufficient Balance");
+
+        try{
+            if(balance > 0 && amount <= balance){
+                balance -= amount;
+                recordTransactions("Withdraw", amount);
+                System.out.println("Withdraw Successful. New Balance is : " + balance);
+            }else{
+                throw new Exception("Invalid withdraw amount or Insufficient Balance");
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 

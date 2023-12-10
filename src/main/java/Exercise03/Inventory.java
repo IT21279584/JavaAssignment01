@@ -34,12 +34,16 @@ public class Inventory {
     }
 
     public Vehicle[] searchByMakeAndModel(String make, String model){
-
         ArrayList<Vehicle> matchVehicles = new ArrayList<>();
-        for(Vehicle vehicle : vehicles){
-            if(vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)){
-                matchVehicles.add(vehicle);
+        try {
+            for(Vehicle vehicle : vehicles){
+                if(vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)){
+                    matchVehicles.add(vehicle);
+                }
             }
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return matchVehicles.toArray(new Vehicle[0]);
     }
