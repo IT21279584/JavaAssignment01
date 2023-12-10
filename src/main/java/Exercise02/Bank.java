@@ -54,4 +54,21 @@ public class Bank {
         }
     }
 
+    public void viewCustomers(){
+        System.out.println("-----Customers List-----");
+        for(Customer customer: customers){
+            System.out.println("customer ID: " +customer.getcId());
+            System.out.println();
+        }
+    }
+
+    public void viewBankAccounts(){
+        System.out.println("-----Bank Account List-----");
+        for(BankAccount bankAccount: bankAccounts){
+            System.out.println("Bank ID: " +bankAccount.getAccNo());
+            System.out.println();
+        }
+    }
+
+
 }
