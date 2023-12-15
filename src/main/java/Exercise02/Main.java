@@ -44,7 +44,7 @@ public class Main {
                     bank.addBankAccount(bankAccount);
 
                     if(accountBalance < 0){
-                        logger.info("Invalid Initial Balance. Please a correct value");
+                        logger.warning("Invalid Initial Balance. Please a correct value");
                         return;
                     }
 

@@ -1,13 +1,15 @@
 package Exercise02;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class BankAccount {
 
-    static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    static Logger logger = LoggerFactory.getLogger(BankAccount.class);
     private int accNo;
     private String name;
     private String type;
@@ -65,7 +67,7 @@ public class BankAccount {
                 recordTransactions("Deposit", amount);
                 System.out.println("Deposit Successful. New Balance is : " + balance);
             }else{
-                logger.info("Invalid Data. Please enter valid deposit amount!!");
+                logger.error("Invalid Data. Please enter valid deposit amount!!");
                 throw new Exception("Invalid Data");
             }
         }catch(Exception e){
@@ -81,7 +83,7 @@ public class BankAccount {
                 recordTransactions("Withdraw", amount);
                 System.out.println("Withdraw Successful. New Balance is : " + balance);
             }else{
-                logger.info("Invalid Data. Please enter valid withdraw amount!!");
+                logger.error("Invalid Data. Please enter valid withdraw amount!!");
                 throw new Exception("Invalid withdraw amount or Insufficient Balance");
             }
         }catch(Exception e){

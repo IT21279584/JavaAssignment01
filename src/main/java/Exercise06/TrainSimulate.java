@@ -1,11 +1,13 @@
 package Exercise06;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class TrainSimulate {
-    static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    static Logger logger = LoggerFactory.getLogger(TrainSimulate.class);
     public static void main(String[] args){
 
         ArrayList<String> stations = new ArrayList<>();
@@ -38,7 +40,7 @@ public class TrainSimulate {
                 System.out.println(stations.get(i));
             }
         }else{
-            logger.info("Invalid Station. Please enter the valid station");
+            logger.error("Invalid Station. Please enter the valid station");
         }
     }
 }
