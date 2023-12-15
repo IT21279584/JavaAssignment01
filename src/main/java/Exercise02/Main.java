@@ -20,11 +20,11 @@ public class Main {
                     System.out.println("Enter Customer ID: ");
                     int customerId = sc.nextInt();
                     System.out.println("Enter Customer Name: ");
-                    String customerName = sc.next();
+                    String customerName = sc.nextLine();
                     System.out.println("Enter Customer Email: ");
-                    String customerEmail = sc.next();
+                    String customerEmail = sc.nextLine();
                     System.out.println("Enter Customer Phone: ");
-                    String customerPhone = sc.next();
+                    String customerPhone = sc.nextLine();
 
                     Customer customer = new Customer(customerId, customerName, customerEmail, customerPhone);
                     bank.addCustomer(customer);
@@ -34,9 +34,9 @@ public class Main {
                     System.out.println("Enter Bank Account Number: ");
                     int bankAccountNo = sc.nextInt();
                     System.out.println("Enter Holder Name: ");
-                    String holderName = sc.next();
+                    String holderName = sc.nextLine();
                     System.out.println("Enter BankAccount Type: ");
-                    String accountType = sc.next();
+                    String accountType = sc.nextLine();
                     System.out.println("Enter BankAccount Balance: ");
                     float accountBalance = sc.nextFloat();
 

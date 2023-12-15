@@ -22,7 +22,6 @@ public class Truck extends Vehicle{
     }
 
     //Getters
-
     public int getBedLength() {
         return bedLength;
     }
