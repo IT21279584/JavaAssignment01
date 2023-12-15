@@ -26,4 +26,37 @@ class InventoryTest {
 
         assertArrayEquals(expect, searchVehicles);
     }
+
+    @Test
+    void testAveragePrice(){
+        Car car1 = new Car("Toyota", "Vitz", "White", 2013, 1400000,5, 5,false);
+        Car car2 = new Car("Suzuki", "Alto", "red", 2014, 850000, 5, 5, true);
+        Truck truck1 = new Truck("Revo", "Gory", "Gray", 2008, 450000, 14, 78);
+        Truck truck2 = new Truck("CPS", "Rego", "blue", 1998, 120000, 15, 150);
+
+        Vehicle[] vehicleList = {car1, car2, truck1, truck2};
+
+        Inventory inventory = new Inventory(vehicleList);
+
+        double avg =  inventory.getAveragePrice();
+        assertEquals(705000.0, avg);
+    }
+
+    @Test
+    void testSetVehicles() {
+
+        Car car1 = new Car("Toyota", "Vitz", "White", 2013, 1400000,5, 5,false);
+        Car car2 = new Car("Suzuki", "Alto", "red", 2014, 850000, 5, 5, true);
+        Truck truck1 = new Truck("Revo", "Gory", "Gray", 2008, 450000, 14, 78);
+        Truck truck2 = new Truck("CPS", "Rego", "blue", 1998, 120000, 15, 150);
+
+        Vehicle[] vehicleList = {car1, car2, truck1, truck2};
+
+        Inventory inventory = new Inventory(vehicleList);
+        Vehicle[] getVehicles = inventory.getVehicles();
+
+        Vehicle[] expect = {car1, car2, truck1, truck2};
+        assertArrayEquals(expect, getVehicles);
+    }
+
 }

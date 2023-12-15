@@ -2,8 +2,10 @@ package Exercise02;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Bank {
+    static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private List<Customer> customers;
     private List<BankAccount> bankAccounts;
 
@@ -14,22 +16,22 @@ public class Bank {
 
     public void addCustomer(Customer customer){
         customers.add(customer);
-        System.out.println("Customer added: " + customer.getCustomerName());
+        logger.info("Customer added: " + customer.getCustomerName());
     }
 
     public void removeCustomer(Customer customer){
         customers.remove(customer);
-        System.out.println("Customer removed: " + customer.getCustomerName());
+        logger.info("Customer removed: " + customer.getCustomerName());
     }
 
     public void addBankAccount(BankAccount bankAccount){
         bankAccounts.add(bankAccount);
-        System.out.println("BankAccount added: " + bankAccount.getName());
+        logger.info("BankAccount added: " + bankAccount.getName());
     }
 
     public void removeBankAccount(BankAccount bankAccount){
         bankAccounts.remove(bankAccount);
-        System.out.println("BankAccount removed: " + bankAccount.getName());
+        logger.info("BankAccount removed: " + bankAccount.getName());
     }
 
     public void displayCustomerDetails(){
