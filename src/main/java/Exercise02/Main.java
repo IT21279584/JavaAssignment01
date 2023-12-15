@@ -76,7 +76,7 @@ public class Main {
                                 bankAccount.viewTransactionHistory();
                                 break;
                             case 4:
-                                System.out.println("Thank You");
+                                logger.info("Thank You");
                                 sc.close();
                                 System.exit(0);
                                 break;

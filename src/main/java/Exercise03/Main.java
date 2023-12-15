@@ -1,7 +1,9 @@
 package Exercise03;
 
-public class Main {
+import java.util.logging.Logger;
 
+public class Main {
+    static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     public static void main(String[] args){
 
         Car car1 = new Car("Toyota", "Vitz", "White", 2013, 1400000,5, 5,false);
@@ -13,16 +15,16 @@ public class Main {
 
         Inventory inventory = new Inventory(vehicleList);
 
-        System.out.println("Average price of vehicles : "+inventory.getAveragePrice());
+        logger.info("Average price of vehicles : "+inventory.getAveragePrice());
 
         String searchMake = "Toyota";
         String searchModel = "Vitz";
         Vehicle[] searchVehicles = inventory.searchByMakeAndModel(searchMake, searchModel);
 
-        System.out.println("Vehicle make with "+searchMake+" and model with "+searchModel);
+        logger.info("Vehicle make with "+searchMake+" and model with "+searchModel);
 
         for(Vehicle searchVehicle : searchVehicles){
-            System.out.println("The Result is match make with "+searchVehicle.getMake()+" and model with "+ searchVehicle.getModel());
+            logger.info("The Result is match make with "+searchVehicle.getMake()+" and model with "+ searchVehicle.getModel());
         }
     }
 }
